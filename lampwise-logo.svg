@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" role="img" aria-labelledby="title description">
+  <title id="title">Lampwise</title>
+  <desc id="description">A black table lamp icon beside the Lampwise wordmark.</desc>
+  <rect width="320" height="72" fill="#fff"/>
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15h30l6 21H15l6-21Z" fill="#000" stroke-width="2"/>
+    <path d="M24 36h24l-5 8H29l-5-8Z" fill="#fff" stroke-width="2"/>
+    <path d="M36 44v15M25 60h22" stroke-width="4"/>
+    <circle cx="36" cy="10" r="2.5" fill="#000" stroke="none"/>
+  </g>
+  <text x="78" y="53" fill="#000" font-family="'Bricolage Grotesque', 'Trebuchet MS', sans-serif" font-size="47" font-weight="800" letter-spacing="-1.5">Lampwise</text>
+</svg>
