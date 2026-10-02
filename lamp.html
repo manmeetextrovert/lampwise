@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lampwise | Free AI Prompt Rewriter</title>
+<meta name="description" content="Rewrite rough ideas into clear AI prompts with Lampwise, a free private prompt rewriter. Answer a few quick questions and copy a stronger prompt instantly.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lampwise">
+<meta property="og:title" content="Lampwise | Free AI Prompt Rewriter">
+<meta property="og:description" content="Turn rough ideas into clear, ready-to-use AI prompts with Lampwise's free private prompt rewriter.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lampwise | Free AI Prompt Rewriter">
+<meta name="twitter:description" content="Rewrite rough ideas into clear AI prompts. Free, private, and ready to copy.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lampwise",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "description": "A free, private prompt rewriter that helps turn rough ideas into clear AI prompts.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ee;--surface:#fffdf9;--surface-2:#f1ede5;--ink:#22231f;--muted:#70716b;
+  --primary:#176b5d;--primary-d:#0f5146;--accent:#e8a936;--warm:#fff0c9;
+  --border:#ded8cd;--ok:#367d50;--shadow:0 18px 50px rgba(38,35,29,.08);
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif
+}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::selection{background:#d7ebe6}
+h1,h2,h3{font-family:var(--head);line-height:1.08;margin:0;letter-spacing:-.035em}
+h1{font-size:clamp(2.55rem,7vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700}
+h3{font-size:1.08rem;font-weight:700}
+p{margin:0}a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:78px 0}
+.sub{color:var(--muted);font-size:1.05rem;max-width:56ch}
+:focus-visible{outline:3px solid #9acfc4;outline-offset:3px;border-radius:8px}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 21px;border:0;border-radius:13px;background:var(--primary);color:#fff;font:600 1rem var(--body);cursor:pointer;text-decoration:none;overflow:hidden;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+.btn:hover{background:var(--primary-d);transform:translateY(-1px);box-shadow:0 8px 20px rgba(23,107,93,.16)}
+.btn:active{transform:translateY(1px) scale(.98);box-shadow:none}
+.btn:focus-visible{box-shadow:0 0 0 5px rgba(23,107,93,.10)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border);box-shadow:none}
+.btn.ghost:hover{background:var(--surface);border-color:#bcb5a8}
+.btn:not(.ghost)::after{content:"";position:absolute;inset:-20% auto -20% -60%;width:35%;background:rgba(255,255,255,.22);transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+.btn:not(.ghost):hover::after{left:125%}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(222,216,205,.8)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:9px;font:800 1.28rem var(--head);text-decoration:none;letter-spacing:-.025em}
+.logo svg{width:31px;height:31px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.logo:hover svg{transform:rotate(-7deg) translateY(-2px)}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:30px}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1.5px;background:var(--primary);transition:right .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a:hover::after{right:0}
+.nav .btn{min-height:40px;padding:0 17px;font-size:.92rem}
+@media(min-width:760px){.nav ul{display:flex;margin-left:auto}.nav .btn{margin-left:20px}}
+
+/* hero */
+.hero{padding:55px 0 82px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-150px;top:-170px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(232,169,54,.18),transparent 67%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{max-width:13ch}
+.hero .sub{margin:20px 0 27px}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 28px}
+.badges span{padding:5px 11px;border-radius:999px;background:rgba(255,253,249,.72);border:1px solid var(--border);font-weight:600;font-size:.84rem;color:#55564f}
+.tool{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:20px;box-shadow:var(--shadow);max-width:790px;transition:box-shadow .35s ease,border-color .35s ease}
+.tool:focus-within{border-color:#b9d8d1;box-shadow:0 20px 60px rgba(38,35,29,.1),0 0 0 5px rgba(23,107,93,.06)}
+.tool label{font-weight:650;display:block;margin-bottom:9px}
+textarea{width:100%;min-height:124px;resize:vertical;border:1.5px solid var(--border);border-radius:14px;padding:15px;font:400 1rem/1.5 var(--body);color:var(--ink);background:#faf8f3;transition:border-color .2s,background .2s,box-shadow .2s}
+textarea::placeholder{color:#98978f}
+textarea:focus{outline:none;border-color:#78b9ac;background:#fff;box-shadow:0 0 0 4px rgba(23,107,93,.07)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;align-items:center}
+.hint{color:var(--muted);font-size:.87rem}
+#out{margin-top:18px}#out:empty{display:none}
+.panel{border-top:1px solid var(--border);padding-top:17px;margin-top:4px;animation:settle .35s ease both}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.chip{padding:5px 11px;border-radius:999px;font-size:.86rem;font-weight:550;background:#fff3d6;border:1px solid #eed69f}
+.chip.done{background:#e8f5f1;border-color:#b9ded6;color:var(--primary-d)}
+.chip.pending{background:#f3eee5;border-style:dashed;color:var(--muted)}
+.chip.kind{background:var(--ink);border-color:var(--ink);color:#fff}
+.q{margin-top:18px}.q h3{font-size:1rem;margin-bottom:9px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{min-height:43px;padding:0 15px;border-radius:11px;border:1.5px solid var(--border);background:var(--surface);font:500 .93rem var(--body);color:var(--ink);cursor:pointer;transition:transform .15s,border-color .15s,background .15s,color .15s}
+.opt:hover{border-color:#7db9ae;transform:translateY(-1px)}
+.opt:active{transform:scale(.97)}
+.opt[aria-pressed=true]{background:var(--primary);border-color:var(--primary);color:#fff}
+.result{background:#edf7f4;border:1.5px solid #c3e0d9;border-radius:14px;padding:16px;margin-top:6px;white-space:pre-wrap;word-break:break-word;animation:resultIn .45s ease both}
+.result-h{display:flex;align-items:center;gap:8px;color:var(--ok);font-weight:700;margin-top:6px}
+.good{color:var(--ok);font-weight:600}
+.meter{height:7px;border-radius:99px;background:#e5e0d7;overflow:hidden;margin:13px 0 6px}
+.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--primary));border-radius:99px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.tips{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:.92rem}
+.own{display:block;width:100%;max-width:340px;margin-top:10px;min-height:42px;border:1.5px solid var(--border);border-radius:11px;padding:0 13px;font:400 .94rem var(--body);background:#faf8f3;color:var(--ink)}
+.own:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(23,107,93,.07)}
+.lamp-art{display:none;position:absolute;right:12px;top:2px;width:245px;opacity:.98;pointer-events:none}
+
+@keyframes settle{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes resultIn{from{opacity:0;transform:translateY(5px);box-shadow:0 0 0 0 rgba(232,169,54,.4)}to{opacity:1;transform:none;box-shadow:0 0 0 12px rgba(232,169,54,0)}}
+@keyframes lampBreath{0%,100%{opacity:.72}50%{opacity:.94}}
+.lamp-light{animation:lampBreath 5.5s ease-in-out infinite}
+
+.lamp-art{filter:drop-shadow(0 16px 18px rgba(38,35,29,.05));}
+.lamp-art svg{overflow:visible;transform-origin:50% 90%;animation:lampFloat 6s ease-in-out infinite}
+.lamp-light{transform-origin:120px 106px;animation:lampBreath 4.8s ease-in-out infinite,lampGlow 7s ease-in-out infinite}
+.lamp-art::after{content:"";position:absolute;left:52px;right:52px;bottom:13px;height:9px;border-radius:50%;background:rgba(38,35,29,.10);filter:blur(7px);animation:shadowBreath 6s ease-in-out infinite}
+.lamp-switch{pointer-events:auto;position:absolute;right:3px;top:18px;width:34px;height:34px;border:1px solid rgba(222,216,205,.9);border-radius:50%;background:rgba(255,253,249,.9);box-shadow:0 6px 16px rgba(38,35,29,.08);cursor:pointer;z-index:3;transition:transform .25s ease,box-shadow .25s ease}
+.lamp-switch:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(38,35,29,.12)}
+.lamp-switch span{display:block;width:9px;height:9px;margin:auto;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(232,169,54,.10),0 0 16px rgba(232,169,54,.35);transition:.3s ease}
+.lamp-status{position:absolute;right:45px;top:25px;font:700 .64rem var(--body);letter-spacing:.12em;color:var(--muted);opacity:.7;transition:.3s ease}
+.lamp-art.is-off .lamp-light{opacity:0!important;animation:none}
+.lamp-art.is-off .lamp-status{color:#98978f}
+.lamp-art.is-off .lamp-switch span{background:#aaa9a1;box-shadow:none}
+.lamp-art.is-off svg{animation:none;transform:translateY(2px)}
+@keyframes lampFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-3px) rotate(.35deg)}}
+@keyframes lampGlow{0%,100%{opacity:.62}50%{opacity:.94}}
+@keyframes shadowBreath{0%,100%{transform:scaleX(.9);opacity:.45}50%{transform:scaleX(1);opacity:.7}}
+@media(min-width:960px){.lamp-art{display:block}}
+.brand-mark{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.logo:hover .brand-mark{transform:translateY(-1px) rotate(-2deg)}
+
+/* sections */
+.steps{display:grid;gap:14px;margin-top:32px}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:23px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.step:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(38,35,29,.07);border-color:#cec6b8}
+.step b{display:grid;place-items:center;width:37px;height:37px;border-radius:11px;background:var(--warm);font:800 1rem var(--head);margin-bottom:14px}
+.step p{color:var(--muted);margin-top:6px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+
+.example{padding-top:24px}
+.example-head{max-width:680px;margin-bottom:22px}
+.example-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.example-sample{min-width:0;min-height:240px;padding:21px;border:1px solid var(--border);border-top:3px solid var(--primary);border-radius:8px;background:var(--surface)}
+.example-sample.after{border-top-color:var(--accent);background:#fff9e9}
+.example-label{font-size:.75rem;font-weight:800;text-transform:uppercase;color:var(--primary);margin-bottom:9px}
+.example-sample.after .example-label{color:#8c5b08}
+.example-sample p{white-space:pre-wrap;overflow-wrap:anywhere}
+.example-sample{transition:opacity .22s ease,transform .22s ease}
+.example-grid.is-changing .example-sample{opacity:.55;transform:translateY(3px)}
+@media(max-width:759px){.example{padding-top:8px}.example-grid{grid-template-columns:1fr}.example-sample{min-height:310px;padding:18px}.example-sample:first-child{min-height:130px}}
+
+.tabs{display:flex;gap:8px;margin:26px 0 18px;overflow-x:auto;padding:2px 2px 7px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:41px;padding:0 17px;border-radius:10px;border:1.5px solid var(--border);background:transparent;font:600 .93rem var(--body);color:var(--muted);cursor:pointer;transition:.18s}
+.tab:hover{background:var(--surface);color:var(--ink)}
+.tab[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.cards{display:grid;gap:13px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:19px;display:flex;flex-direction:column;gap:10px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 13px 27px rgba(38,35,29,.07);border-color:#cbc4b8}
+.card p{color:var(--muted);font-size:.93rem;flex:1}
+.card .btn{align-self:flex-start;min-height:39px;padding:0 15px;font-size:.89rem}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+
+.why{background:#eaf4f1}
+.why-grid{display:grid;gap:27px;margin-top:30px}
+.why-grid h3{margin-bottom:6px}.why-grid p{color:var(--muted)}
+@media(min-width:760px){.why-grid{grid-template-columns:repeat(2,1fr);gap:36px 48px}}
+
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--border);padding:18px 0}
+summary{cursor:pointer;font:600 1.03rem var(--body);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.35rem;line-height:1;color:var(--primary);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:10px}
+
+.cta{text-align:center}
+.cta-box{background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:22px;padding:48px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cta-box::before{content:"";position:absolute;inset:0 0 0 auto;width:34%;min-width:100px;background:repeating-linear-gradient(135deg,transparent 0 15px,rgba(23,107,93,.055) 15px 17px);mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.cta-box>*{position:relative}
+.cta-box h2{max-width:20ch;margin-inline:auto}
+.cta-box p{color:var(--muted);margin:12px auto 26px;max-width:44ch}
+.cta-box .btn{background:var(--accent);color:var(--ink)}
+.cta-box .btn:hover{background:#f1bd52}
+.confetti-layer{position:fixed;inset:0;z-index:100;overflow:hidden;pointer-events:none}
+.confetti-piece{position:absolute;top:-14px;left:var(--x);width:9px;height:13px;border-radius:2px;background:var(--color);animation:confetti-fall var(--duration) cubic-bezier(.2,.65,.4,1) var(--delay) both;will-change:transform,opacity}
+.confetti-piece:nth-child(3n){width:7px;height:7px;border-radius:50%}
+@keyframes confetti-fall{0%{transform:translate3d(0,-10px,0) rotate(0)}15%{opacity:1}100%{transform:translate3d(var(--drift),105vh,0) rotate(var(--spin));opacity:0}}
+@media(prefers-reduced-motion:reduce){.confetti-layer{display:none}}
+.prompt-shelf{padding-top:62px;padding-bottom:78px;background:linear-gradient(180deg,transparent 0%,rgba(234,244,241,.45) 100%);}
+.library-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:6px}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.14em;color:var(--primary);margin-bottom:8px}
+.library-note{flex:none;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,253,249,.72);color:var(--muted);font-size:.78rem;font-weight:600}
+.card .prompt-text{display:-webkit-box;line-clamp:5;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.card .copy-prompt{width:100%;}
+.card.copied{border-color:#b9ded6;box-shadow:0 12px 28px rgba(23,107,93,.08)}
+@media(max-width:600px){.library-head{display:block}.library-note{display:inline-block;margin-top:15px}.prompt-shelf{padding-top:50px;padding-bottom:58px}}
+
+footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:center}
+.foot nav{display:flex;gap:20px;flex-wrap:wrap}.foot a{text-decoration:none}.foot a:hover{color:var(--ink)}
+
+.js .rv{opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:759px){
+  .wrap{padding:0 16px}.hero{padding:38px 0 60px}section{padding:62px 0}
+  .hero h1{max-width:10ch}.hero .sub{font-size:1rem}
+  .tool{padding:15px;border-radius:18px}.tool .row .btn{flex:1}
+  .hint{width:100%;margin-top:2px}
+  textarea{min-height:115px}
+  .cta-box{border-radius:21px;padding:39px 19px}
+}
+
+/* ---- prompt box micro-interactions ---- */
+.tool{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
+.tool::before{content:"";position:absolute;inset:-35%;background:radial-gradient(circle at var(--glow-x,50%) var(--glow-y,20%),rgba(232,169,54,.13),transparent 28%);opacity:.55;pointer-events:none;transition:opacity .4s ease}
+.tool>*{position:relative;z-index:1}
+.tool:focus-within{transform:translateY(-2px);border-color:#c9d8d2;box-shadow:0 18px 42px rgba(38,35,29,.08),0 0 0 5px rgba(23,107,93,.045)}
+#inp{transition:background .3s ease,box-shadow .3s ease}
+#inp:focus{background:#fffefa;box-shadow:inset 0 0 0 1px rgba(23,107,93,.08)}
+#inp.placeholder-changing::placeholder{opacity:0;transform:translateY(-3px)}
+#inp::placeholder{transition:opacity .18s ease,transform .18s ease}
+@keyframes placeholderFloat{0%,100%{opacity:.72;transform:translateY(0)}50%{opacity:.98;transform:translateY(-1px)}}
+#inp{animation:placeholderFloat 4.5s ease-in-out infinite}
+/* ---- subtle ambient motion ---- */
+.hero::before{
+  animation:ambientGlow 9s ease-in-out infinite;
+  transform-origin:center;
+}
+.lamp-art{
+  animation:lampFloat 7s ease-in-out infinite;
+  transform-origin:50% 55%;
+}
+.lamp-art svg{
+  overflow:visible;
+}
+.lamp-art::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:88px;
+  width:2px;
+  height:2px;
+  border-radius:50%;
+  background:rgba(232,169,54,.65);
+  box-shadow:
+    -42px 20px 0 rgba(232,169,54,.28),
+    36px 34px 0 rgba(232,169,54,.22),
+    -20px 56px 0 rgba(23,107,93,.18),
+    48px 68px 0 rgba(23,107,93,.14);
+  animation:tinyDust 6s ease-in-out infinite;
+}
+.lamp-light{
+  transform-origin:120px 106px;
+  animation:lampBreath 5.5s ease-in-out infinite, lightPulse 8s ease-in-out infinite;
+}
+.tool{
+  animation:toolSettle .8s cubic-bezier(.2,.8,.2,1) both;
+}
+.badges span{
+  transition:transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.badges span:hover{
+  transform:translateY(-2px);
+  border-color:#c5bcae;
+  background:#fffdf9;
+}
+@keyframes ambientGlow{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-12px,10px,0) scale(1.035)}
+}
+@keyframes lampFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(0,-5px,0) rotate(.35deg)}
+}
+@keyframes tinyDust{
+  0%,100%{opacity:.25;transform:translateY(4px) scale(.9)}
+  50%{opacity:.65;transform:translateY(-5px) scale(1)}
+}
+@keyframes lightPulse{
+  0%,100%{opacity:.88}
+  50%{opacity:1}
+}
+@keyframes toolSettle{
+  from{opacity:.72;transform:translateY(5px)}
+  to{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* final responsive pass */
+html,body{width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%;height:auto}
+button,input,textarea{font:inherit}
+textarea{max-width:100%}
+@media(max-width:959px){.hero .wrap{max-width:760px}.lamp-art{display:none}}
+@media(min-width:760px) and (max-width:1100px){
+  .wrap{padding-left:28px;padding-right:28px}
+  .hero{padding-top:48px}
+  .hero h1{max-width:12ch}
+  .tool{max-width:720px}
+}
+@media(max-width:600px){
+  .nav{height:60px}
+  .logo{font-size:1.15rem;gap:7px}
+  .brand-mark{width:28px;height:28px}
+  .nav .btn{min-height:38px;padding:0 13px;font-size:.88rem}
+  .hero{padding:32px 0 48px}
+  .hero h1{font-size:clamp(2.35rem,12vw,3.25rem);max-width:9ch}
+  .hero .sub{margin-top:16px;line-height:1.55}
+  .badges{margin-bottom:21px}
+  .tool{padding:13px;border-radius:17px}
+  .tool .row{gap:8px}
+  .tool .row .btn{min-width:0}
+  .tool .hint{font-size:.81rem}
+  section{padding:52px 0}
+  .steps{margin-top:24px}
+  .step{padding:19px}
+  .cards{grid-template-columns:1fr}
+  .card{padding:17px}
+  .why-grid{gap:23px}
+  .cta-box{padding:34px 17px}
+}
+@media(max-width:380px){
+  .wrap{padding-left:13px;padding-right:13px}
+  .nav .btn{padding:0 11px}
+  .hero h1{font-size:2.25rem}
+  .tool .row{display:grid;grid-template-columns:1fr 1fr}
+  .tool .hint{grid-column:1/-1}
+  .opt{width:100%;text-align:left;justify-content:flex-start}
+}
+@media(min-width:1101px){
+  .hero .wrap{padding-right:280px}
+}
+:root{
+  color-scheme:light;
+  --bg:#fff;--surface:#fff;--surface-2:#fff;--ink:#000;--muted:#000;
+  --primary:#000;--primary-d:#000;--accent:#000;--warm:#fff;
+  --border:#000;--ok:#000;--shadow:none
+}
+body,header,section,footer{background:#fff;color:#000}
+header{border-bottom:1px solid #000;backdrop-filter:none}
+body::selection{background:#000;color:#fff}
+a,.nav ul a,.hint,.sub,.library-note,footer{color:#000}
+.btn{background:#000;color:#fff;border:1px solid #000;box-shadow:none}
+.btn:hover,.btn:active{background:#fff;color:#000;border-color:#000;box-shadow:none}
+.btn:not(.ghost)::after{display:none}
+.btn.ghost{background:#fff;color:#000;border:1px solid #000}
+.btn.ghost:hover{background:#000;color:#fff;border-color:#000}
+:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:3px;box-shadow:none}
+.hero::before,.cta-box::before,.tool::before{display:none}
+.tool,.step,.card,.example-sample,.cta-box{background:#fff;color:#000;border:1px solid #000;border-radius:8px;box-shadow:none}
+.tool{border-radius:8px}
+.step b{background:#000;color:#fff;border-radius:0}
+textarea,.own{background:#fff;color:#000;border:1px solid #000;border-radius:4px}
+textarea:focus,.own:focus{background:#fff;border-color:#000;box-shadow:0 0 0 2px #000}
+.chip,.chip.done,.chip.pending{background:#fff;color:#000;border:1px solid #000}
+.chip.kind,.opt[aria-pressed=true],.tab[aria-selected=true]{background:#000;color:#fff;border-color:#000}
+.opt,.tab{background:#fff;color:#000;border:1px solid #000;border-radius:4px}
+.opt:hover,.tab:hover{background:#000;color:#fff;border-color:#000}
+.result,.why,.prompt-shelf,.example-sample.after{background:#fff;color:#000;border:1px solid #000;box-shadow:none}
+.bar{background:#000}
+.meter{background:#fff;border:1px solid #000}
+.good,.result-h,.eyebrow,.example-label,.example-sample.after .example-label{color:#000}
+.card:hover,.step:hover{border-color:#000;box-shadow:none}
+.lamp-art{filter:none}
+.lamp-art svg .lamp-beam{fill:#fff;stroke:#000}
+.lamp-art svg .lamp-shade{fill:#000;stroke:#000}
+.lamp-art svg .lamp-eye{fill:#fff;stroke:#000}
+.lamp-art svg .lamp-pupil{fill:#000}
+.lamp-art svg .lamp-smile{fill:none;stroke:#fff}
+.lamp-art svg .lamp-arm{fill:none;stroke:#000;stroke-linecap:round;stroke-width:4}
+.lamp-art svg .lamp-arm-left{transform-origin:82px 80px;animation:lampWave 2.4s ease-in-out infinite}
+.lamp-art svg .lamp-arm-right{transform-origin:158px 80px;animation:lampWave 2.4s ease-in-out -1.2s infinite}
+.lamp-art svg{animation:mascotBob 3.2s ease-in-out infinite}
+.lamp-light,.lamp-art::after{display:none}
+.lamp-switch{background:#fff;border:1px solid #000;box-shadow:none}
+.lamp-switch span{background:#000;box-shadow:none}
+.lamp-art.is-off .lamp-beam{display:none}
+.lamp-art.is-off svg .lamp-shade{fill:#fff}
+.lamp-art.is-off svg .lamp-smile{transform:scaleY(.35);transform-origin:120px 75px}
+.lamp-status{color:#000}
+.confetti-layer{filter:none}
+.result{animation:none}
+.cta-box .btn{background:#000;color:#fff;border-color:#000}
+.cta-box .btn:hover{background:#fff;color:#000}
+.brand-mark path:first-of-type{fill:#000!important}
+.brand-mark path:nth-of-type(2){fill:#fff!important;stroke:#000;stroke-width:1}
+.brand-mark circle{fill:#000!important}
+.cta .btn svg path{fill:#fff;stroke:#fff}
+.cta .btn svg path:nth-of-type(2){fill:#000!important;stroke:#fff;stroke-width:1}
+.library-note{background:#fff;color:#000;border:1px solid #000}
+svg path,svg circle{fill:#000;stroke:#000}
+.brand-mark path:nth-of-type(2),.cta .btn svg path:nth-of-type(2){fill:#fff!important;stroke:#000}
+.lamp-art svg .lamp-beam{fill:#fff;stroke:#000}
+.lamp-art svg .lamp-shade{fill:#000;stroke:#000}
+.lamp-art svg .lamp-eye{fill:#fff;stroke:#000}
+.lamp-art svg .lamp-pupil{fill:#000;stroke:#000}
+.lamp-art svg .lamp-smile{fill:none;stroke:#fff}
+.lamp-art svg .lamp-arm{fill:none;stroke:#000}
+.lamp-art{display:block;filter:none}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.js .rv.in{opacity:1;transform:none}
+@keyframes mascotBob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+@keyframes lampWave{0%,100%{transform:rotate(0)}50%{transform:rotate(-15deg)}}
+@media(min-width:960px) and (max-width:1100px){.hero .wrap{padding-right:260px}}
+@media(max-width:959px){
+  .hero .wrap .lamp-art{position:relative;top:auto;right:auto;width:170px;height:156px;margin:0 auto 10px}
+  .hero .wrap .lamp-art svg{width:100%;height:100%}
+}
+@media(prefers-reduced-motion:reduce){.lamp-art svg,.lamp-art svg .lamp-arm{animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Lampwise home">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+  <path d="M11 8h14l3 10H8L11 8Z" fill="#176b5d"/>
+  <path d="M13 18h10l-2 3h-6l-2-3Z" fill="#e8a936"/>
+  <path d="M18 21v8" stroke="#22231f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M12 30h12" stroke="#22231f" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="18" cy="6" r="1.7" fill="#e8a936"/>
+</svg>
+      Lampwise
+    </a>
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#library">Library</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn" href="#tool">Try now</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="lamp-art" aria-hidden="true">
+      <div class="lamp-status" id="lampStatus">ON</div>
+      <svg viewBox="0 0 240 220" role="img" aria-label="Table lamp">
+  <path class="lamp-beam" d="M86 88h68l31 66H55L86 88Z"/>
+  <path class="lamp-arm lamp-arm-left" d="M83 79 68 64"/>
+  <path class="lamp-arm lamp-arm-right" d="m157 79 15-15"/>
+  <path class="lamp-shade" d="M81 88h78l-9-42H90L81 88Z"/>
+  <circle class="lamp-eye" cx="108" cy="66" r="6"/>
+  <circle class="lamp-eye" cx="132" cy="66" r="6"/>
+  <circle class="lamp-pupil" cx="109" cy="67" r="2"/>
+  <circle class="lamp-pupil" cx="133" cy="67" r="2"/>
+  <path class="lamp-smile" d="M110 76q10 9 20 0" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M78 88h84" stroke="#22231f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M114 46h12" stroke="#22231f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M120 89v75" stroke="#22231f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M103 164h34l5 23h-44l5-23Z" fill="#22231f"/>
+  <path d="M94 188h52" stroke="#22231f" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="120" cy="39" r="2.5" fill="#e8a936"/>
+</svg>
+    </div>
+    <h1>Your free AI prompt rewriter.</h1>
+    <p class="sub">Turn a rough idea into a clearer prompt. Lampwise spots missing context, asks up to three useful questions, and builds a ready-to-copy prompt right in your browser.</p>
+    
+    <div class="tool" id="tool">
+      <label for="inp">Your rough prompt</label>
+      <textarea id="inp" maxlength="20000" placeholder="e.g. turn my messy weekend trip ideas into a 3-day plan"></textarea>
+      <div class="row">
+        <button class="btn" id="go" type="button">Make it better</button>
+        <button class="btn ghost" id="reset" type="button">Clear</button>
+        <span class="hint">Runs in your browser. Nothing is sent or saved.</span>
+      </div>
+      <div id="out" aria-live="polite"></div>
+    </div>
+    <button class="lamp-switch" id="lampSwitch" type="button" aria-label="Turn lamp off" aria-pressed="true"><span></span></button>
+  </div>
+</section>
+
+<section class="example" id="example" aria-labelledby="example-title">
+  <div class="wrap">
+    <div class="example-head">
+      <h2 id="example-title">A little more direction changes everything.</h2>
+      <p class="sub" style="margin-top:10px">Illustrative examples of how clearer context can sharpen a request.</p>
+    </div>
+    <div class="example-grid" id="exampleGrid" aria-live="off">
+      <article class="example-sample">
+        <p class="example-label">Before · rough idea</p>
+        <p id="exampleBefore">Help me plan a weekend trip.</p>
+      </article>
+      <article class="example-sample after">
+        <p class="example-label">After · illustrative prompt</p>
+        <p id="exampleAfter">Act as a travel planner. Create a relaxed two-day weekend itinerary for two adults visiting Portland, Oregon. Include a mix of indoor and outdoor activities, estimated costs, and transit options. Offer a rainy-day alternative and ask one question if an important detail is missing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="library" class="prompt-shelf">
+  <div class="wrap">
+    <div class="library-head">
+      <div>
+        <p class="eyebrow">READY TO BORROW</p>
+        <h2>Prompt shelf</h2>
+        <p class="sub" style="margin-top:10px">Pick a prompt, copy it, and drop it straight into ChatGPT, Claude, Gemini, or any other AI agent.</p>
+      </div>
+      <span class="library-note">Copy → paste → go</span>
+    </div>
+    <div class="tabs" role="tablist" id="tabs" aria-label="Prompt categories"></div>
+    <div class="cards" id="cards" role="tabpanel" tabindex="0" aria-label="Prompt templates"></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>Three taps to a better prompt</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Paste</h3><p>Drop in whatever you have, even a single line.</p></div>
+      <div class="step"><b>2</b><h3>Tap</h3><p>See what's missing, then pick answers to up to three questions.</p></div>
+      <div class="step"><b>3</b><h3>Copy</h3><p>Your finished prompt is ready to paste into any tool.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="why">
+  <div class="wrap">
+    <h2>Why people use Lampwise</h2>
+    <div class="why-grid">
+      <div><h3>No AI needed</h3><p>Every suggestion comes from clear, fixed rules, so results are predictable.</p></div>
+      <div><h3>Private by design</h3><p>Your text stays in your browser. We don't store or send it.</p></div>
+      <div><h3>Fast</h3><p>Answer three taps and your prompt is built instantly.</p></div>
+      <div><h3>Free</h3><p>No account, no limits, no card.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <h2>Questions</h2>
+    <div style="margin-top:20px">
+      <details><summary>Does Lampwise use AI?</summary><p>No. It checks your prompt against a set of rules, asks questions from a written list, and fills in a template.</p></details>
+      <details><summary>Where does my prompt go?</summary><p>Nowhere. Everything runs in your browser, and nothing is uploaded or stored.</p></details>
+      <details><summary>Which tools can I use the result with?</summary><p>Any chatbot or writing tool that accepts text. The prompt is plain text.</p></details>
+      <details><summary>Why only three questions?</summary><p>Three is enough to fix the biggest gaps without slowing you down.</p></details>
+      <details><summary>Is it really free?</summary><p>Yes. There's nothing to pay for and nothing to sign up for.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Got a rough idea? Let’s light it up.</h2>
+      <p>Start messy. Lampwise helps you turn the thought into something you can actually use.</p>
+      <a class="btn" href="#tool"><svg viewBox="0 0 36 36" aria-hidden="true" style="width:22px;height:22px;margin-right:8px">
+  <path d="M11 8h14l3 10H8L11 8Z" fill="#22231f"/>
+  <path d="M13 18h10l-2 3h-6l-2-3Z" fill="#e8a936"/>
+  <path d="M18 21v8" stroke="#22231f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M12 30h12" stroke="#22231f" stroke-width="2.5" stroke-linecap="round"/>
+</svg>Take the lamp now</a>
+    </div>
+  </div>
+</section>
+</main>
+
+
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Lampwise. Made without AI, on purpose.</span>
+    <nav aria-label="Footer"><a href="#how">How it works</a><a href="#library">Library</a><a href="#faq">FAQ</a></nav>
+  </div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const inp=$('#inp'),out=$('#out');
+
+/* ---- small tactile details ---- */
+const placeholders=[
+  'e.g. turn my messy weekend trip ideas into a 3-day plan',
+  'e.g. plan a 7-day study routine for my exam',
+  'e.g. explain this code to me like I am a beginner',
+  'e.g. write a LinkedIn post about my new product'
+];
+let ph=0;
+let placeholderTimer;
+function rotatePlaceholder(){
+  if(document.activeElement===inp || inp.value) return;
+  inp.classList.add('placeholder-changing');
+  setTimeout(()=>{
+    ph=(ph+1)%placeholders.length;
+    inp.placeholder=placeholders[ph];
+    inp.classList.remove('placeholder-changing');
+  },180);
+}
+placeholderTimer=setInterval(rotatePlaceholder,3200);
+inp.addEventListener('focus',()=>{if(placeholderTimer) clearInterval(placeholderTimer);});
+inp.addEventListener('blur',()=>{if(!placeholderTimer) placeholderTimer=setInterval(rotatePlaceholder,3200)});
+inp.addEventListener('input',()=>{
+  document.documentElement.style.setProperty('--typing-glow', Math.min(inp.value.length/120,.35));
+});
+inp.addEventListener('mousemove',e=>{
+  const r=inp.getBoundingClientRect();
+  inp.closest('.tool').style.setProperty('--glow-x',`${((e.clientX-r.left)/r.width)*100}%`);
+  inp.closest('.tool').style.setProperty('--glow-y',`${((e.clientY-r.top)/r.height)*100}%`);
+});
+
+/* ---- rule-based logic (no AI, no API) ---- */
+/* 1. Task detection: weighted keyword scoring across 14 task types */
+const MAX_PROMPT_LENGTH=20000;
+const TASKS={
+  email:[/\b(e-?mails?|subject lines?|reply to|follow-?ups?|messages? to|write to|dear)\b/gi,'Email'],
+  code:[/\b(codes?|functions?|bugs?|debug(?:ging)?|scripts?|python|javascript|sql|apis?|program(?:s|ming)?|html|css|regex|errors?|react|apps?)\b/gi,'Coding'],
+  summarize:[/\b(summari[sz](?:e|es|ed|ing)|tl;?dr|recaps?|key points|shorten(?:s|ed|ing)?|condense(?:s|d|ing)?)\b/gi,'Summary'],
+  explain:[/\b(explain(?:s|ed|ing)?|teach(?:es|ing)?|what is|what are|how does|how do|why|meaning|understand(?:s|ing)?|difference between)\b/gi,'Explanation'],
+  plan:[/\b(plans?|schedules?|roadmaps?|strateg(?:y|ies)|itinerar(?:y|ies)|routines?|checklists?|timelines?|steps to)\b/gi,'Plan'],
+  career:[/\b(resumes?|cvs?|cover letters?|interviews?|jobs?|promotions?|salaries|linkedin summaries?)\b/gi,'Career'],
+  social:[/\b(linkedin|tweets?|twitter|instagram|captions?|reels?|threads?|tiktok|facebook|youtube)\b/gi,'Social post'],
+  marketing:[/\b(ads?|advertis(?:e|es|ing)|campaigns?|slogans?|taglines?|brands?|product descriptions?|seo|landing pages?|newsletters?|sales)\b/gi,'Marketing'],
+  analyze:[/\b(analy[sz](?:e|es|ed|ing)|compar(?:e|es|ed|ing)|pros and cons|swot|reviews?|evaluat(?:e|es|ed|ing)|critiques?|feedback on)\b/gi,'Analysis'],
+  study:[/\b(quizzes|quiz|exams?|stud(?:y|ies|ied|ying)|flashcards?|homework|revis(?:e|es|ed|ing)|lessons?|syllabus|notes on)\b/gi,'Study'],
+  creative:[/\b(stories|story|poems?|songs?|lyrics|scripts?|novels?|characters?|fiction|scenes?|haikus?)\b/gi,'Creative writing'],
+  brainstorm:[/\b(ideas?|brainstorms?|names? for|suggest(?:s|ed|ing|ions?)?|options for|come up with)\b/gi,'Brainstorm'],
+  rewrite:[/\b(rewrites?|rephrases?|translates?|proofreads?|paraphrases?|improve this|edit this|fix grammar)\b/gi,'Rewrite'],
+  write:[/\b(writes?|drafts?|composes?|blogs?|articles?|essays?|speeches|reports?|posts?)\b/gi,'Writing']
+};
+function classify(t){
+  const scores=Object.keys(TASKS).map(key=>[key,(t.match(TASKS[key][0])||[]).length]);
+  const highest=Math.max(...scores.map(([,score])=>score));
+  const winners=scores.filter(([,score])=>score===highest&&score>0);
+  const specificWinners=winners.filter(([key])=>key!=='write');
+  if(specificWinners.length===1)return specificWinners[0][0];
+  return winners.length===1?winners[0][0]:'other';
+}
+const CATNAME=k=>k==='other'?'General':TASKS[k][1];
+
+/* 2. Element detection: what does the prompt already contain? */
+const Q={
+  role:{lab:'Role',t:/\b(act as|you are|as a|as an|pretend|imagine you)\b/i,q:'Who should the AI act as?'},
+  goal:{lab:'Goal',t:/\b(goal|purpose|so that|in order to|because|aim|to (ask|request|persuade|inform|apologi[sz]e|convince|get|sell|book|learn|help|show|teach|thank|invite|remind|negotiate))\b/i,q:"What's the goal?"},
+  lang:{lab:'Language or tool',t:/\b(python|javascript|js|typescript|java|c\+\+|c#|golang|rust|php|sql|html|css|ruby|swift|kotlin|react|node|excel|bash)\b/i,q:'Which language or tool?'},
+  audience:{lab:'Audience',t:/\b(audience|for (my|our|the|a|an|beginners|students|kids|customers|clients|readers|managers|experts)|beginners?|students?|customers?|clients?|readers?|manager|team)\b/i,q:'Who is it for?'},
+  tone:{lab:'Tone',t:/\b(formal|friendly|casual|professional|persuasive|polite|firm|funny|warm|serious|playful|dark|heartfelt|witty|empathetic|confident)\b/i,q:'What tone fits?'},
+  format:{lab:'Format',t:/\b(bullets?|table|steps?|paragraphs?|list|outline|json|numbered|bulleted|markdown|code block)\b/i,q:'How should the answer look?'},
+  length:{lab:'Length',t:/\b(\d+\s*(words?|sentences?|paragraphs?|lines?|pages?|minutes?)|short|brief|concise|detailed|long|one line|in-depth)\b/i,q:'How long should it be?'},
+  level:{lab:'Level',t:/\b(beginner|intermediate|advanced|expert|eli5|simple terms|simply|like i'?m \d+|basic)\b/i,q:'What level should it be pitched at?'},
+  timeframe:{lab:'Timeframe',t:/\b(\d+\s*(days?|weeks?|months?|hours?|years?)|today|tomorrow|weekly|daily|monthly|deadline)\b/i,q:'What timeframe?'},
+  platform:{lab:'Platform',t:/\b(linkedin|twitter|instagram|facebook|tiktok|youtube|reddit|blog|whatsapp|newsletter|website)\b/i,q:'Where will this be used?'},
+  genre:{lab:'Genre',t:/\b(horror|romance|comedy|sci-?fi|fantasy|mystery|thriller|drama|fable|adventure)\b/i,q:'Which genre?'},
+  constraint:{lab:'Constraints',t:/\b(avoid|don'?t|do not|without|must|only|exclude|no more than|never)\b/i,q:'Any rules to follow?'},
+  count:{lab:'How many',t:/\b(\d+\s*(ideas?|options?|names?|suggestions?|examples?)|a few|several)\b/i,q:'How many do you want?'},
+  example:{lab:'Examples',t:/\b(examples?|for instance|e\.g\.|such as)\b/i,q:'Should it include examples?'}
+};
+const NEGATED_FIELD=/\b(?:don't|do not|doesn't|does not|shouldn't|should not|not|never|avoid|without|exclude)\b(?:\s+[\w'-]+){0,4}\s*$/i;
+function hasField(text,key){
+  const pattern=Q[key].t,matcher=new RegExp(pattern.source,pattern.flags.replace('g','')+'g');
+  let match;
+  while((match=matcher.exec(text))){
+    if(key==='constraint'||!NEGATED_FIELD.test(text.slice(Math.max(0,match.index-80),match.index)))return true;
+  }
+  return false;
+}
+
+/* 3. Which questions matter most for each task type (in priority order) */
+const PRI={
+  email:['goal','tone','length','audience'],code:['lang','goal','format','level'],summarize:['length','format','audience','tone'],
+  explain:['level','format','length','example'],plan:['timeframe','goal','format','constraint'],career:['goal','tone','format','length'],
+  social:['platform','tone','length','audience'],marketing:['audience','platform','tone','goal'],analyze:['format','audience','goal','length'],
+  study:['level','format','length','example'],creative:['genre','tone','length','constraint'],brainstorm:['count','audience','format','constraint'],
+  rewrite:['tone','audience','length','constraint'],write:['goal','tone','length','audience'],other:['goal','tone','format','length']
+};
+
+/* 4. Options (some depend on the task type) */
+const ROLES={email:['Professional writer','Customer-support lead','Sales copywriter'],code:['Senior developer','Code reviewer','Patient tutor'],summarize:['Editor','Research analyst','Teacher'],explain:['Patient teacher','Subject expert','Friendly coach'],plan:['Project manager','Strategy consultant','Personal coach'],career:['Career coach','Recruiter','Hiring manager'],social:['Social media manager','Copywriter','Content creator'],marketing:['Marketing strategist','Copywriter','Brand specialist'],analyze:['Business analyst','Critical reviewer','Researcher'],study:['Tutor','Examiner','Study coach'],creative:['Novelist','Screenwriter','Poet'],brainstorm:['Creative director','Inventor','Strategist'],rewrite:['Editor','Proofreader','Translator'],write:['Skilled writer','Copywriter','Journalist'],other:['Helpful expert','Clear writer','Friendly coach']};
+const GOALS={email:['Ask for something','Follow up','Complain','Say thank you'],career:['Apply for a job','Prepare for an interview','Ask for a raise','Introduce myself'],marketing:['Get sign-ups','Drive sales','Build awareness'],code:['Build a feature','Fix a bug','Improve speed','Understand it'],plan:['Save time','Meet a deadline','Build a habit'],write:['Inform','Persuade','Entertain']};
+const FORMATS={email:['Short email','Email with subject line','Bullet summary'],code:['Code with comments','Step-by-step','Code only'],social:['Single post','Thread','Caption with hashtags'],plan:['Checklist','Day-by-day table','Numbered steps']};
+const OPT=(id,c)=>({
+  role:ROLES[c]||ROLES.other,
+  goal:GOALS[c]||['Inform','Persuade','Get a decision'],
+  lang:['Python','JavaScript','SQL','Java','No preference'],
+  audience:c==='email'?['My manager','A colleague','A customer','A stranger']:['Beginners','Colleagues','Customers','Experts'],
+  tone:c==='creative'?['Dark','Funny','Heartfelt','Epic']:['Formal','Friendly','Firm','Casual'],
+  format:FORMATS[c]||['Paragraphs','Bullet points','Numbered steps','Table'],
+  length:c==='social'?['One line','Under 50 words','Under 150 words']:['Under 100 words','About 200 words','Detailed'],
+  level:['Beginner','Intermediate','Expert',"Explain like I'm 12"],
+  timeframe:['1 day','1 week','1 month','3 months'],
+  platform:['LinkedIn','Instagram','X (Twitter)','YouTube'],
+  genre:['Fantasy','Mystery','Romance','Sci-fi','Comedy'],
+  constraint:['Avoid jargon','Avoid clichés','No emojis','Keep it original'],
+  count:['3','5','10','20'],
+  example:['Yes, include examples','No examples']
+}[id]);
+
+/* 5. How each answer is written into the final prompt */
+const APPLY={
+  goal:v=>`My goal: ${v.toLowerCase()}.`,lang:v=>v==='No preference'?'':`Use ${v}.`,audience:v=>`Audience: ${v.toLowerCase()}.`,
+  tone:v=>`Tone: ${v.toLowerCase()}.`,format:v=>`Format: ${v.toLowerCase()}.`,length:v=>`Length: ${v.toLowerCase()}.`,
+  level:v=>`Pitch it at a ${v.toLowerCase()} level.`,timeframe:v=>`Timeframe: ${v}.`,platform:v=>`Platform: ${v}.`,
+  genre:v=>`Genre: ${v.toLowerCase()}.`,constraint:v=>`Rule: ${v.toLowerCase()}.`,count:v=>/^\d+$/.test(v)?`Give me ${v} options.`:v,
+  example:v=>/^yes/i.test(v)?'Include concrete examples.':'Skip the examples.'
+};
+const VAGUE=/\b(something|stuff|things?|good|nice|best|etc|whatever|somehow)\b/i;
+
+let S={};
+let previousStrength=0;
+let confettiLayer=null;
+let confettiTimer=0;
+const $a=()=>S.ans;
+function showInputMessage(message){
+  S={};
+  previousStrength=0;
+  out.innerHTML='';
+  const notice=document.createElement('p');
+  notice.className='hint';
+  notice.setAttribute('role','alert');
+  notice.textContent=message;
+  out.appendChild(notice);
+}
+function analyze(){
+  const text=inp.value.replace(/\r\n?/g,'\n').split('\n').map(line=>line.trimEnd()).join('\n').trim();
+  if(text.length<4){showInputMessage('Enter at least four characters to analyze a prompt.');return}
+  if(text.length>MAX_PROMPT_LENGTH){showInputMessage(`Prompts must be ${MAX_PROMPT_LENGTH.toLocaleString()} characters or fewer.`);return}
+  const cat=classify(text);
+  const ids=PRI[cat].concat('role');
+  const missing=ids.filter(k=>!hasField(text,k));
+  S={text,cat,ids,missing,qs:missing.slice(0,3),ans:{},words:text.split(/\s+/).length};
+  previousStrength=0;
+  render();
+}
+function strength(){
+  const covered=S.ids.filter(k=>!S.missing.includes(k)||Boolean(S.ans[k])).length;
+  return Math.round(100*covered/S.ids.length);
+}
+function celebrateFullStrength(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(confettiTimer)window.clearTimeout(confettiTimer);
+  if(confettiLayer)confettiLayer.remove();
+  const layer=document.createElement('div');
+  layer.className='confetti-layer';
+  layer.setAttribute('aria-hidden','true');
+  const colors=['#000000','#ffffff'];
+  for(let i=0;i<32;i++){
+    const piece=document.createElement('span');
+    piece.className='confetti-piece';
+    piece.style.setProperty('--x',`${Math.random()*100}%`);
+    piece.style.setProperty('--drift',`${Math.round(Math.random()*180-90)}px`);
+    piece.style.setProperty('--spin',`${Math.round(Math.random()*720-360)}deg`);
+    piece.style.setProperty('--delay',`${(Math.random()*.35).toFixed(2)}s`);
+    piece.style.setProperty('--duration',`${(1.8+Math.random()*.7).toFixed(2)}s`);
+    piece.style.setProperty('--color',colors[i%colors.length]);
+    layer.appendChild(piece);
+  }
+  document.body.appendChild(layer);
+  confettiLayer=layer;
+  confettiTimer=window.setTimeout(()=>{
+    layer.remove();
+    if(confettiLayer===layer)confettiLayer=null;
+    confettiTimer=0;
+  },3200);
+}
+function render(focusTarget){
+  const {qs,ans,cat,missing}=S,pct=strength();
+  const reachedFullStrength=pct===100&&previousStrength!==100;
+  previousStrength=pct;
+  const unanswered=missing.filter(k=>!ans[k]);
+  let h='<div class="panel"><div class="chips"><span class="chip kind">Looks like: '+CATNAME(cat)+'</span></div>';
+  h+=`<div class="meter" role="img" aria-label="Prompt strength ${pct} percent"><div class="bar" style="width:${pct}%"></div></div><p class="hint">Prompt strength: ${pct}%</p>`;
+  const tips=[];
+  if(S.words<6)tips.push('Short prompts leave the AI guessing. Add a sentence of context.');
+  if(VAGUE.test(S.text))tips.push('Swap vague words like "stuff" or "good" for something specific.');
+  if(tips.length)h+='<ul class="tips">'+tips.map(t=>`<li>${t}</li>`).join('')+'</ul>';
+  if(!missing.length)h+='<p class="good">Nothing obvious is missing. Your prompt already covers the basics.</p>';
+  else{
+    h+='<strong>What\'s missing</strong><div class="chips">'+missing.map(k=>`<span class="chip ${ans[k]?'done':''} ${!qs.includes(k)&&!ans[k]?'pending':''}" data-field="${k}">${Q[k].lab}${!qs.includes(k)&&!ans[k]?' (not asked)':''}</span>`).join('')+'</div>';
+    h+=`<p class="hint" id="coverage-note"${unanswered.length?'':' hidden'}>${unanswered.length} tracked ${unanswered.length===1?'field remains':'fields remain'} uncovered and count against this score.</p>`;
+    h+=qs.map(k=>`<div class="q"><h3>${Q[k].q}</h3><div class="opts">${OPT(k,cat).map(o=>`<button type="button" class="opt" data-k="${k}" data-v="${o.replace(/"/g,'&quot;')}" aria-pressed="${ans[k]===o}">${o}</button>`).join('')}</div><input class="own" data-k="${k}" maxlength="1000" placeholder="Or type your own" aria-label="${Q[k].q} Type your own answer"></div>`).join('');
+    if(!Object.keys(ans).length)h+='<div class="row"><button class="btn ghost" id="skip" type="button">Skip questions</button></div>';
+  }
+  h+='<div id="final"></div></div>';
+  out.innerHTML=h;
+  out.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const key=b.dataset.k,value=b.dataset.v;ans[key]=ans[key]===value?undefined:value;if(!ans[key])delete ans[key];render({type:'opt',key,value})});
+  out.querySelectorAll('.own').forEach(i=>{
+    const k=i.dataset.k;if(ans[k]&&!OPT(k,cat).includes(ans[k]))i.value=ans[k];
+    i.onchange=()=>updateAnswer(k,i.value);
+  });
+  const sk=$('#skip');if(sk)sk.onclick=showFinal;
+  if(!missing.length||Object.keys(ans).length)showFinal();
+  if(focusTarget){
+    const selector=focusTarget.type==='opt'?'.opt':'.own';
+    const target=Array.from(out.querySelectorAll(selector)).find(node=>node.dataset.k===focusTarget.key&&(focusTarget.type!=='opt'||node.dataset.v===focusTarget.value));
+    if(target)target.focus();
+  }
+  if(reachedFullStrength)celebrateFullStrength();
+}
+/* 6. Prompt assembly */
+function updateAnswer(key,value){
+  const answer=value.trim();
+  if(answer)S.ans[key]=answer;
+  else delete S.ans[key];
+  const pct=strength(),reachedFullStrength=pct===100&&previousStrength!==100;
+  previousStrength=pct;
+  const meter=out.querySelector('.meter'),bar=out.querySelector('.bar');
+  meter.setAttribute('aria-label',`Prompt strength ${pct} percent`);
+  bar.style.width=`${pct}%`;
+  const chip=out.querySelector(`[data-field="${key}"]`);
+  if(chip){
+    chip.classList.toggle('done',Boolean(S.ans[key]));
+    chip.classList.toggle('pending',!S.qs.includes(key)&&!S.ans[key]);
+  }
+  const unanswered=S.missing.filter(field=>!S.ans[field]);
+  const note=$('#coverage-note');
+  if(note){
+    note.hidden=unanswered.length===0;
+    note.textContent=`${unanswered.length} tracked ${unanswered.length===1?'field remains':'fields remain'} uncovered and count against this score.`;
+  }
+  const final=$('#final');
+  if(!S.missing.length||Object.keys(S.ans).length){
+    if(final.querySelector('#res'))$('#res').textContent=build();
+    else showFinal();
+  }else if(final.querySelector('#res'))final.innerHTML='';
+  if(reachedFullStrength)celebrateFullStrength();
+}
+function terminalPunctuation(text){
+  const value=text.trim();
+  return /[.!?…]["')\]]*$/.test(value)?value:`${value}.`;
+}
+function build(){
+  const {text,ans}=S;const a=ans;
+  const lines=[];
+  lines.push(a.role?`Act as ${/^[aeiou]/i.test(a.role.trim())?'an':'a'} ${a.role.toLowerCase()}.`:'');
+  lines.push(terminalPunctuation(text));
+  const extra=Object.keys(a).filter(k=>k!=='role').map(k=>APPLY[k]?APPLY[k](a[k]):`${Q[k].lab}: ${a[k]}.`).filter(Boolean);
+  if(extra.length){
+    lines.push('');
+    lines.push('Requirements:');
+    extra.forEach(e=>e.replace(/\r\n?/g,'\n').split('\n').forEach((line,index)=>lines.push(index===0?'- '+line:'  '+line)));
+  }
+  if(Object.keys(a).length){lines.push('');lines.push('If anything is unclear, ask me one question before you start.')}
+  return lines.filter((l,i)=>l!==''||i>0).join('\n');
+}
+function showFinal(){
+  const f=$('#final');
+  f.innerHTML='<div class="result-h">Your prompt is ready</div><div class="result" id="res"></div><div class="row"><button class="btn" id="copy" type="button">Copy prompt</button></div>';
+  $('#res').textContent=build();
+  $('#copy').onclick=async e=>{
+    try{await navigator.clipboard.writeText($('#res').textContent);e.target.textContent='Copied'}
+    catch(_){const r=document.createRange();r.selectNodeContents($('#res'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Selected. Press copy.'}
+    setTimeout(()=>e.target.textContent='Copy prompt',2000);
+  };
+}
+$('#go').onclick=analyze;
+inp.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key==='Enter'){e.preventDefault();analyze()}
+});
+$('#reset').onclick=()=>{inp.value='';out.innerHTML='';S={};previousStrength=0;inp.focus()};
+
+/* ---- desktop lamp interaction ---- */
+const lampArt=document.querySelector('.lamp-art');
+const lampSwitch=document.querySelector('#lampSwitch');
+const lampStatus=document.querySelector('#lampStatus');
+if(lampSwitch){
+  lampSwitch.onclick=()=>{
+    const off=lampArt.classList.toggle('is-off');
+    lampSwitch.setAttribute('aria-pressed',String(!off));
+    lampSwitch.setAttribute('aria-label',off?'Turn lamp on':'Turn lamp off');
+    lampStatus.textContent=off?'OFF':'ON';
+  };
+}
+
+/* ---- rotating prompt examples ---- */
+const EXAMPLES=[
+  {
+    before:'Help me plan a weekend trip.',
+    after:'Act as a travel planner. Create a relaxed two-day weekend itinerary for two adults visiting Portland, Oregon. Include a mix of indoor and outdoor activities, estimated costs, and transit options. Offer a rainy-day alternative and ask one question if an important detail is missing.'
+  },
+  {
+    before:'Write an email asking for more time.',
+    after:'Act as a professional email writer. Draft a polite, concise email to my project lead asking to move Friday\'s deadline to Tuesday. Briefly explain that the final review needs more time, acknowledge the schedule impact, and suggest a check-in on Monday.'
+  },
+  {
+    before:'Help me fix this Python error.',
+    after:'Act as a senior Python developer. Diagnose the error using the code and traceback I provide. Explain the root cause in plain language, show the smallest safe fix, and include a test that would catch the issue again. Ask for the missing code or traceback if either is absent.'
+  }
+];
+const exampleSection=$('#example'),exampleGrid=$('#exampleGrid');
+const exampleBefore=$('#exampleBefore'),exampleAfter=$('#exampleAfter');
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+let exampleIndex=0,exampleTimer=0,exampleSwapTimer=0;
+let examplesPaused=reducedMotion.matches,examplesHovered=false;
+function stopExampleRotation(){
+  if(exampleTimer)window.clearTimeout(exampleTimer);
+  exampleTimer=0;
+}
+function scheduleExampleRotation(){
+  stopExampleRotation();
+  if(examplesPaused||examplesHovered||document.hidden)return;
+  exampleTimer=window.setTimeout(()=>{
+    showExample(exampleIndex+1);
+    scheduleExampleRotation();
+  },2000);
+}
+function showExample(index){
+  exampleIndex=(index+EXAMPLES.length)%EXAMPLES.length;
+  if(exampleSwapTimer)window.clearTimeout(exampleSwapTimer);
+  exampleGrid.classList.add('is-changing');
+  exampleSwapTimer=window.setTimeout(()=>{
+    const example=EXAMPLES[exampleIndex];
+    exampleBefore.textContent=example.before;
+    exampleAfter.textContent=example.after;
+    exampleGrid.classList.remove('is-changing');
+    exampleSwapTimer=0;
+  },120);
+}
+exampleSection.addEventListener('mouseenter',()=>{examplesHovered=true;stopExampleRotation()});
+exampleSection.addEventListener('mouseleave',()=>{examplesHovered=false;scheduleExampleRotation()});
+document.addEventListener('visibilitychange',scheduleExampleRotation);
+const updateMotionPreference=event=>{
+  examplesPaused=event.matches;
+  if(examplesPaused)stopExampleRotation();
+  else scheduleExampleRotation();
+};
+if(reducedMotion.addEventListener)reducedMotion.addEventListener('change',updateMotionPreference);
+else if(reducedMotion.addListener)reducedMotion.addListener(updateMotionPreference);
+if(examplesPaused)stopExampleRotation();
+else scheduleExampleRotation();
+
+/* ---- library ---- */
+const LIB={
+  "AI Agents":[
+    ['Research agent','Act as a research agent. Investigate [topic] using reliable sources. Separate verified facts from assumptions, compare conflicting information, and finish with a concise findings summary and source list.'],
+    ['Coding agent','Act as a senior coding agent. Work on [task] in small steps. First understand the existing code and constraints, then propose the smallest safe change, explain what you changed, and include tests or verification steps.'],
+    ['Product agent','Act as a product manager. Turn [idea or problem] into a clear product brief with user problem, target user, desired outcome, key requirements, edge cases, and measurable success criteria.'],
+    ['Decision agent','Act as a neutral decision-support agent. Analyze [decision] using the criteria I provide. Show the relevant evidence, trade-offs, risks, assumptions, and unanswered questions without making the decision for me.'],
+    ['Project planner','Turn [goal] into a practical project plan with milestones, owners, dependencies, risks, and next actions. Mark assumptions and ask for missing constraints before setting dates.'],
+    ['Customer support agent','Draft a helpful response to [customer issue]. Acknowledge the concern, use only the facts provided, offer clear next steps, and avoid promising outcomes that are not confirmed.'],
+    ['Data analyst','Analyze [dataset or metrics] to answer [business question]. State the method, summarize notable patterns, flag data limitations, and separate correlation from causation.'],
+    ['Meeting facilitator','Prepare a focused agenda for [meeting goal] with time-boxed topics, decisions needed, and pre-work. End with questions that help the group reach a clear outcome.'],
+    ['Quality assurance agent','Create a test plan for [feature] covering core flows, edge cases, accessibility, and failure states. Prioritize by user impact and list clear pass criteria.']
+  ],
+  Writing:[['Blog outline','Act as a content strategist. Create an outline for a blog post about [topic] for [audience]. Include a hook, 5 sections, and a closing call to action.'],['Product description','Act as a copywriter. Write a friendly 80-word description of [product] for [customer type]. Lead with one clear benefit.'],['LinkedIn post','Write a LinkedIn post about [achievement or lesson]. Conversational tone, a strong first line, under 150 words, no hashtags spam.'],['Meeting summary','Turn these meeting notes into a concise summary for [audience]. Group decisions, action items with owners and due dates, and open questions. Flag details that are missing instead of guessing: [paste notes].'],['Executive summary','Summarize [report or topic] for [audience] in under 200 words. Lead with the main conclusion, then include the strongest supporting points and any important caveat.'],['Rewrite for clarity','Rewrite the text below for clarity and flow while preserving its meaning and key details. Keep the tone [tone] and list any ambiguous claims separately: [paste text].'],['Launch announcement','Draft a launch announcement for [product or update] aimed at [audience]. Explain the problem it solves, the main benefit, and one clear next step. Avoid unsupported claims.'],['Process documentation','Turn these notes into a step-by-step guide for [task]. Include prerequisites, expected results, and recovery steps for common errors: [paste notes].'],['Short story','Write a [genre] short story about [character] facing [challenge]. Use a clear beginning, turning point, and ending in about [word count] words.']],
+  Email:[['Cold outreach','Act as a sales copywriter. Write a short, friendly cold email to a [role] at a [company type] about [product]. Mention one benefit and end with one simple question. Under 120 words.'],['Polite follow-up','Write a polite follow-up email about [topic] sent [number] days ago. Keep it under 80 words and make the next step obvious.'],['Firm complaint','Write a firm but respectful email about [problem] to [recipient]. State the issue, what I expect, and a deadline of [date].'],['Reschedule a meeting','Write a concise, courteous email to [recipient] asking to reschedule our [meeting] from [current time] to [new time]. Briefly explain [reason] and offer two alternatives.'],['Thank-you email','Write a sincere thank-you email to [recipient] for [specific help]. Mention the impact, keep it personal but concise, and avoid adding details I did not provide.'],['Introduction email','Draft a brief introduction email connecting [person A] and [person B] because of [shared interest or need]. Explain why they may benefit from meeting and ask permission before sharing contact details.'],['Approval request','Write an email asking [decision maker] to approve [request]. Include the reason, expected impact, cost or effort if known, and the decision deadline.'],['Set a boundary','Write a calm, professional email to [recipient] explaining [boundary or limitation]. Be direct, respectful, and clear about what I can offer instead.'],['Application follow-up','Write a concise follow-up email to [hiring contact] about my [role] application submitted on [date]. Reaffirm interest and ask about the timeline without sounding demanding.']],
+  Coding:[['Explain this code','Act as a patient tutor. Explain what this code does, line by line, for a beginner: [paste code].'],['Debug an error','Act as a senior developer. Here is my code and the error message. Find the cause and show the fix: [code] [error].'],['Write tests','Write unit tests for this function using [framework]. Cover normal cases, edge cases, and bad input: [paste function].'],['Review a pull request','Review this code change for correctness, security, and maintainability. Report only actionable findings with severity, file or function, and a suggested fix. If you find none, say so: [paste diff].'],['Refactor safely','Refactor [code] to improve [readability or maintainability] without changing behavior. Explain the changes and include tests that demonstrate behavior is preserved.'],['Improve performance','Inspect [code or query] for likely performance bottlenecks. Explain how to measure them, recommend the smallest useful optimization, and note trade-offs.'],['Design an API','Propose a simple API for [use case]. Define endpoints or functions, request and response examples, validation, error cases, and compatibility considerations.'],['Write a SQL query','Write a SQL query for [question] using this schema: [schema]. Explain joins and assumptions, handle nulls where relevant, and avoid changing the data.'],['Accessibility review','Review this UI code for keyboard and screen-reader accessibility. Report specific issues, affected elements, and minimal fixes: [paste code].']],
+  Study:[['Explain simply','Explain [topic] as if I were 12. Use one everyday analogy and finish with 3 key points.'],['Quiz me','Create a 10-question quiz on [topic] with answers hidden at the end. Mix easy and hard questions.'],['Study plan','Make a [number]-day study plan for [subject]. I have [hours] per day. Include daily goals and a review day.'],['Revision flashcards','Create 12 concise question-and-answer flashcards for [topic]. Cover the core ideas, include a few application questions, and keep each answer to two sentences or fewer.'],['Study guide','Create a structured study guide for [topic] with key terms, core concepts, common misconceptions, and a short self-check at the end.'],['Practice problems','Create 8 practice problems on [topic], ordered from introductory to challenging. Put worked solutions after all questions.'],['Compare concepts','Compare [concept A] and [concept B] in a table. Explain what they share, how they differ, and when each is useful.'],['Recall session','Quiz me on [topic] one question at a time. Wait for my answer before giving feedback, then adapt the next question to what I missed.'],['Exam review','Help me review for [exam] using these topics: [list]. Identify high-priority gaps, ask diagnostic questions, and make a final review checklist.']],
+  Marketing:[['Campaign brief','Create a campaign brief for [product or offer] targeting [audience]. Include objective, message, channels, deliverables, constraints, and measurable success criteria.'],['Audience research plan','Design a research plan to understand [audience] and their needs around [problem]. Separate questions to investigate from assumptions; do not invent customer findings.'],['Ad variations','Write 5 ad variations for [offer] on [platform]. Give each a distinct angle, one clear benefit, and a concise call to action. Avoid claims not supported by the brief.'],['Landing page copy','Draft landing page copy for [product] aimed at [audience]. Include headline, benefits, proof points to request, objections, and a clear call to action. Mark missing evidence as a placeholder.'],['SEO content brief','Create an SEO content brief for [topic] aimed at [audience]. Include search intent, a proposed outline, related questions, and useful internal link opportunities without promising rankings.'],['Positioning statement','Develop a positioning statement for [product] using the audience, problem, category, benefit, and differentiator I provide. Flag any missing inputs rather than making them up.'],['Email nurture sequence','Plan a 4-email sequence for [audience] who [context]. Give each email a goal, subject line, key message, and next step; keep the sequence helpful, not pushy.'],['Social content calendar','Create a two-week social content calendar for [brand] on [platform]. Vary formats and themes, include draft hooks, and note any assets needed.'],['Marketing metrics review','Analyze these campaign metrics against the stated goal: [metrics and goal]. Calculate relevant rates, explain limitations, and recommend the next test without assuming causation.']]
+};
+let cur='AI Agents';
+const tabId=k=>`tab-${k.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`;
+function tabs(){
+  $('#tabs').innerHTML=Object.keys(LIB).map(k=>`<button class="tab" id="${tabId(k)}" role="tab" aria-controls="cards" aria-selected="${k===cur}" tabindex="${k===cur?0:-1}" data-k="${k}">${k}</button>`).join('');
+  $('#tabs').querySelectorAll('.tab').forEach(b=>{
+    b.onclick=()=>{cur=b.dataset.k;tabs();cards();$('#'+tabId(cur)).focus()};
+    b.onkeydown=e=>{
+      const keys=Object.keys(LIB),index=keys.indexOf(cur);
+      const next=e.key==='ArrowRight'?keys[(index+1)%keys.length]:e.key==='ArrowLeft'?keys[(index-1+keys.length)%keys.length]:e.key==='Home'?keys[0]:e.key==='End'?keys[keys.length-1]:null;
+      if(!next)return;
+      e.preventDefault();
+      cur=next;
+      tabs();cards();
+      $('#'+tabId(cur)).focus();
+    };
+  });
+}
+function cards(){
+  $('#cards').setAttribute('aria-labelledby',tabId(cur));
+  $('#cards').innerHTML=LIB[cur].map((c,i)=>`<article class="card"><h3>${c[0]}</h3><p class="prompt-text"></p><button class="btn copy-prompt" type="button" data-i="${i}">Copy prompt</button></article>`).join('');
+  $('#cards').querySelectorAll('.card').forEach((el,i)=>{
+    el.querySelector('.prompt-text').textContent=LIB[cur][i][1];
+    el.querySelector('button').onclick=async()=>{
+      const prompt=LIB[cur][i][1],btn=el.querySelector('button');
+      let copied=false,feedback='Copy unavailable';
+      try{await navigator.clipboard.writeText(prompt);copied=true}
+      catch(_){
+        const ta=document.createElement('textarea');
+        ta.value=prompt;
+        ta.setAttribute('readonly','');
+        ta.style.position='fixed';
+        ta.style.opacity='0';
+        document.body.appendChild(ta);
+        ta.select();
+        try{copied=document.execCommand('copy')}catch(__){}
+        ta.remove();
+        if(!copied){
+          try{
+            const range=document.createRange();
+            range.selectNodeContents(el.querySelector('.prompt-text'));
+            const selection=window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            feedback='Selected. Press copy.';
+          }catch(__){}
+        }
+      }
+      btn.textContent=copied?'Copied':feedback;
+      if(copied)el.classList.add('copied');
+      setTimeout(()=>{btn.textContent='Copy prompt';el.classList.remove('copied')},1600);
+    };
+  });
+}
+tabs();cards();
+/* ---- gentle reveal ---- */
+(function(){
+  const els=document.querySelectorAll('.step,.why-grid>div,.cta-box,.faq details,.example-sample,.library-head,.card,.lamp-art,.tool');
+  if(!('IntersectionObserver' in window)||!els.length)return;
+  document.documentElement.classList.add('js');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  els.forEach((el,i)=>{el.classList.add('rv');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+})();
+</script>
+</body>
+</html>
