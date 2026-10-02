@@ -7,6 +7,7 @@
 <meta name="description" content="Rewrite rough ideas into clear AI prompts with Lampwise, a free private prompt rewriter. Answer a few quick questions and copy a stronger prompt instantly.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="lampwise-favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lampwise">
 <meta property="og:title" content="Lampwise | Free AI Prompt Rewriter">
@@ -64,8 +65,7 @@ section{padding:78px 0}
 header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(222,216,205,.8)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
 .logo{display:flex;align-items:center;gap:9px;font:800 1.28rem var(--head);text-decoration:none;letter-spacing:-.025em}
-.logo svg{width:31px;height:31px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.logo:hover svg{transform:rotate(-7deg) translateY(-2px)}
+.logo img{display:block;width:142px;height:auto}
 .nav ul{display:none;list-style:none;margin:0;padding:0;gap:30px}
 .nav ul a{text-decoration:none;color:var(--muted);font-weight:500;position:relative}
 .nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1.5px;background:var(--primary);transition:right .2s}
@@ -425,14 +425,7 @@ svg path,svg circle{fill:#000;stroke:#000}
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="Lampwise home">
-      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
-  <path d="M11 8h14l3 10H8L11 8Z" fill="#176b5d"/>
-  <path d="M13 18h10l-2 3h-6l-2-3Z" fill="#e8a936"/>
-  <path d="M18 21v8" stroke="#22231f" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M12 30h12" stroke="#22231f" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="18" cy="6" r="1.7" fill="#e8a936"/>
-</svg>
-      Lampwise
+      <img src="lampwise-logo.svg" alt="" width="320" height="72">
     </a>
     <ul>
       <li><a href="#how">How it works</a></li>
